@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # GolfUi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
@@ -27,6 +26,3 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-=======
-# golf-ui
->>>>>>> 38dde7b7a04354f392229295ad3b2fe08a8bb47f
