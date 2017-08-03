@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { GuiHeaderComponent } from './gui-header/gui-header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GuiHeaderComponent
   ],
   imports: [
     BrowserModule
