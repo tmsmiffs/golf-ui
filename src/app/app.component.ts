@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'golf-ui';
-  headerText = 'Golf Stats';
+  header1 = 'Golf Stats';
+  header2 = 'Course List';
+  action1 = 'Add';
+  action2 = 'Remove';
 }
