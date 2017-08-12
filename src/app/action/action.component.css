@@ -1,0 +1,26 @@
+.action-button {
+    background: #E2E4E6;
+    border-radius: 3px;
+    color: #8c8c8c;
+    cursor: pointer;
+    display: block;
+    float: left;
+    padding: 6px;
+    margin: 5px;
+}
+
+.action-button:hover {
+  background: #D6DADC;
+}
+
+.action-button:active {
+  background: #CDD2D4;
+}
+
+a {
+  font-family: "Helvetica";
+}
+
+a:hover {
+    color: #111;
+}
