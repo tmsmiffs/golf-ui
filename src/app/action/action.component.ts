@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-action',
@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class ActionComponent {
   @Input() actionText: string;
+  @Output() selected = new EventEmitter();
+
+  onClick() {
+    this.selected.emit();
+  }
 }
