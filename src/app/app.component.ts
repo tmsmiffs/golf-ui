@@ -8,13 +8,16 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class AppComponent {
   title = 'golf-ui';
 
+  headers = 'Headers';
   header1 = 'Golf Stats';
   header2 = 'Course List';
 
+  actions = 'Actions';
   actionResult: string;
-
   action1 = 'Add';
   action2 = 'Remove';
+
+  listItems = 'List Items';
 
   actionClicked1(event) {
     this.actionResult = this.action1 + ' clicked';

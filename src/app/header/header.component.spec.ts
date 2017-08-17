@@ -22,14 +22,21 @@ describe('HeaderComponent', () => {
     comp = fixture.componentInstance;
     de = fixture.debugElement.query(By.css('h2'));
     el = de.nativeElement;
-
-    comp.headerText = 'Golf Stats';
-
-    fixture.detectChanges();
   });
 
   it(`should display header text in uppercase`, () => {
+    comp.headerText = 'Golf Stats';
+    comp.upper = true;
+    fixture.detectChanges();
+
     expect(el.textContent).toEqual('GOLF STATS');
+  });
+
+  it('should display header text as provided', () => {
+    comp.headerText = 'HeaDer';
+    fixture.detectChanges();
+
+    expect(el.textContent).toEqual('HeaDer');
   });
 
 });

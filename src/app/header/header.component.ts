@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class HeaderComponent {
   @Input() headerText: string;
+  @Input() upper: boolean = false;
 }

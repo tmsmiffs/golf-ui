@@ -1,13 +1,42 @@
 <div>
-  <h1>
-    {{title}}
-  </h1>
-  <div>
-    <app-header [headerText]="header1"></app-header>
-    <app-header [headerText]="header2"></app-header>
-    <app-action [actionText]="action1" (selected)="actionClicked1($event)"></app-action>
-    <app-action [actionText]="action2" (selected)="actionClicked2($event)"></app-action>
-    {{actionResult}}
+  <div class="container">
+    <div class="row">
+      <h1>
+        {{title}}
+      </h1>
+    </div>
+    <br><br>
+    <div class="row">
+      <app-header [headerText]="headers"></app-header>
+      <p>
+        Headers are h2 elements.  Use the headerText property to set the text and the upper property to set the case.
+      </p>
+    </div>
+    <div class="row">
+      <app-header [headerText]="header1" [upper]="true"></app-header>
+    </div>
+    <div class="row">
+      <app-header [headerText]="header2"></app-header>
+    </div>
+    <br><br>
+    <div class="row">
+        <app-header [headerText]="actions"></app-header>
+    </div>
+    <div class="row">
+      <app-action [actionText]="action1" (selected)="actionClicked1($event)"></app-action>
+    </div>
+    <div class="row">
+      <app-action [actionText]="action2" (selected)="actionClicked2($event)"></app-action>
+    </div>
+    <div class="row">
+      {{actionResult}}
+    </div>
+    <br><br>
+    <div class="row">
+        <app-header [headerText]="listItems"></app-header>
+    </div>
+    <app-list-item></app-list-item>
+
   </div>
 
 </div>
