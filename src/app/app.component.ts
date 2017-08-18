@@ -9,8 +9,8 @@ export class AppComponent {
   title = 'golf-ui';
 
   headers = 'Headers';
-  header1 = 'Golf Stats';
-  header2 = 'Course List';
+  header1 = 'Example Header';
+  header2 = 'Another Header';
 
   actions = 'Actions';
   actionResult: string;

@@ -1,42 +1,48 @@
-<div>
-  <div class="container">
-    <div class="row">
+<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+  <div class="navbar-nav-scroll">
+    <ul class="navbar-nav bd-navbar-nav flex-row">
+      <li class="nav-item">
+        <a class="nav-link " href="/">Home</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="container">
+  <div class="row flex-xl-nowrap">
+    <main class="col-12">
       <h1>
         {{title}}
       </h1>
-    </div>
-    <br><br>
-    <div class="row">
-      <app-header [headerText]="headers"></app-header>
-      <p>
-        Headers are h2 elements.  Use the headerText property to set the text and the upper property to set the case.
-      </p>
-    </div>
-    <div class="row">
-      <app-header [headerText]="header1" [upper]="true"></app-header>
-    </div>
-    <div class="row">
-      <app-header [headerText]="header2"></app-header>
-    </div>
-    <br><br>
-    <div class="row">
+      <div class="content">
+        <app-header [headerText]="headers"></app-header>
+        <p>
+          Headers are h2 elements. Use the headerText property to set the text. The optonal upper property sets the case. The default is false.
+        </p>
+        <app-header [headerText]="header1" [upper]="true"></app-header>
+        <app-header [headerText]="header2"></app-header>
+      </div>
+
+      <div class="content">
         <app-header [headerText]="actions"></app-header>
-    </div>
-    <div class="row">
-      <app-action [actionText]="action1" (selected)="actionClicked1($event)"></app-action>
-    </div>
-    <div class="row">
-      <app-action [actionText]="action2" (selected)="actionClicked2($event)"></app-action>
-    </div>
-    <div class="row">
-      {{actionResult}}
-    </div>
-    <br><br>
-    <div class="row">
+        <p>
+          Actions are links that act as buttons. Set the text with the actionText property. Use the selected property to bind an event
+          handler.
+        </p>
+        <div class="row no-gutters">
+          <div class="col-lg-2 col-md-4">
+            <app-action [actionText]="action1" (selected)="actionClicked1($event)"></app-action>
+            <app-action [actionText]="action2" (selected)="actionClicked2($event)"></app-action>
+          </div>
+          <div class="col">
+            {{actionResult}}
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
         <app-header [headerText]="listItems"></app-header>
-    </div>
-    <app-list-item></app-list-item>
-
+        <app-list-item></app-list-item>
+      </div>
+    </main>
   </div>
-
 </div>
