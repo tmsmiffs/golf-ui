@@ -1,4 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import 'prismjs/prism';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
 
 @Component({
   selector: 'app-root',
@@ -12,19 +15,28 @@ export class AppComponent {
   header1 = 'Example Header';
   header2 = 'Another Header';
 
+  headerSyntax =`<app-header [headerText]="header" [upper]="true"></app-header>`;
+
   actions = 'Actions';
-  actionResult: string;
-  action1 = 'Add';
-  action2 = 'Remove';
+  addAction = 'Add';
+  addActionResult: string;
+  removeAction = 'Remove';
+  removeActionResult: string;
 
   listItems = 'List Items';
 
-  actionClicked1(event) {
-    this.actionResult = this.action1 + ' clicked';
+  actionSyntax = `<app-action [actionText]="action" (selected)="actionClicked($event)"></app-action>`;
+
+
+  addClicked(event) {
+    this.addActionResult = this.addAction + ' clicked';
   }
 
-  actionClicked2(event) {
-    this.actionResult = this.action2 + ' clicked';
+  removeClicked(event) {
+    this.removeActionResult = this.removeAction + ' clicked';
   }
 
+  ngAfterViewInit() {
+    Prism.highlightAll(true);
+  }
 }

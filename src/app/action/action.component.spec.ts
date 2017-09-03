@@ -43,6 +43,7 @@ describe('ActionComponent', () => {
   });
 
   it('should execute callback on click', () => {
+    expect(testHost.actionResult).toBe(undefined);
     el.triggerEventHandler('click', null);
     expect(testHost.actionResult).toBe('Added');
   });

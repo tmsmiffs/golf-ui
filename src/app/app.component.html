@@ -20,6 +20,11 @@
         </p>
         <app-header [headerText]="header1" [upper]="true"></app-header>
         <app-header [headerText]="header2"></app-header>
+        <pre>
+          <code class="language-typescript">
+            {{ headerSyntax }}
+          </code>
+        </pre>
       </div>
 
       <div class="content">
@@ -28,21 +33,39 @@
           Actions are links that act as buttons. Set the text with the actionText property. Use the selected property to bind an event
           handler.
         </p>
+
         <div class="row no-gutters">
           <div class="col-lg-2 col-md-4">
-            <app-action [actionText]="action1" (selected)="actionClicked1($event)"></app-action>
-            <app-action [actionText]="action2" (selected)="actionClicked2($event)"></app-action>
+            <app-action [actionText]="addAction" (selected)="addClicked($event)"></app-action>
           </div>
           <div class="col">
-            {{actionResult}}
+            {{addActionResult}}
           </div>
         </div>
+
+        <div class="row no-gutters">
+          <div class="col-lg-2 col-md-4">
+            <app-action [actionText]="removeAction" (selected)="removeClicked($event)"></app-action>
+          </div>
+          <div class="col">
+            {{removeActionResult}}
+          </div>
+        </div>
+
+        <pre>
+          <code class="language-typescript">
+            {{ actionSyntax }}
+          </code>
+        </pre>
       </div>
 
       <div class="content">
         <app-header [headerText]="listItems"></app-header>
         <app-list-item></app-list-item>
       </div>
+
+
+
     </main>
   </div>
 </div>
