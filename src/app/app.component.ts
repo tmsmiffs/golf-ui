@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import 'prismjs/prism';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';
@@ -8,14 +8,14 @@ import 'prismjs/components/prism-typescript';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'golf-ui';
 
   headers = 'Headers';
   header1 = 'Example Header';
   header2 = 'Another Header';
 
-  headerSyntax =`<app-header [headerText]="header" [upper]="true"></app-header>`;
+  headerSyntax = `<app-header [headerText]="header" [upper]="true"></app-header>`;
 
   actions = 'Actions';
   addAction = 'Add';
