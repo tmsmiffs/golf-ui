@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./action.component.css']
 })
 export class ActionComponent {
-  @Input() actionText: string;
+  @Input() text: string;
   @Output() selected = new EventEmitter();
 
   onClick() {

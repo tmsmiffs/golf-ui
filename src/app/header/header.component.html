@@ -1,1 +1,27 @@
-<h2 class="header">{{upper ? (headerText|uppercase) : headerText}}</h2>
+<div *ngIf='!size'>
+  <h1 class="header">{{upper ? (text|uppercase) : text}}</h1>
+</div>
+
+<div *ngIf="size == 'h1'">
+  <h1 class="header">{{upper ? (text|uppercase) : text}}</h1>
+</div>
+
+<div *ngIf="size == 'h2'">
+  <h2 class="header">{{upper ? (text|uppercase) : text}}</h2>
+</div>
+
+<div *ngIf="size == 'h3'">
+  <h3 class="header">{{upper ? (text|uppercase) : text}}</h3>
+</div>
+
+<div *ngIf="size == 'h4'">
+  <h4 class="header">{{upper ? (text|uppercase) : text}}</h4>
+</div>
+
+<div *ngIf="size == 'h5'">
+  <h5 class="header">{{upper ? (text|uppercase) : text}}</h5>
+</div>
+
+<div *ngIf="size == 'h6'">
+  <h6 class="header">{{upper ? (text|uppercase) : text}}</h6>
+</div>

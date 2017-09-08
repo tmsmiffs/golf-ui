@@ -5,13 +5,13 @@ import { DebugElement, Component } from '@angular/core';
 import { ActionComponent } from './action.component';
 
 @Component({
-  template: `<app-action [actionText]="actionText" (selected)="onSelected($event)"></app-action>`
+  template: `<app-action [text]="text" (selected)="onSelected($event)"></app-action>`
 })
 class TestHostComponent {
-  actionResult: string;
-  actionText = 'Add';
+  result: string;
+  text = 'Add';
   onSelected(event) {
-    this.actionResult = 'Added';
+    this.result = 'Added';
   }
 }
 
@@ -43,9 +43,9 @@ describe('ActionComponent', () => {
   });
 
   it('should execute callback on click', () => {
-    expect(testHost.actionResult).toBe(undefined);
+    expect(testHost.result).toBe(undefined);
     el.triggerEventHandler('click', null);
-    expect(testHost.actionResult).toBe('Added');
+    expect(testHost.result).toBe('Added');
   });
 
 });

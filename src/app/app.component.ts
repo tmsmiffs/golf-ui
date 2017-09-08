@@ -11,29 +11,33 @@ import 'prismjs/components/prism-typescript';
 export class AppComponent implements AfterViewInit {
   title = 'golf-ui';
 
-  headers = 'Headers';
-  header1 = 'Example Header';
-  header2 = 'Another Header';
+  headerSyntax = `
+  // h1 header uppercase with one-time string initialization
+  <app-header text="h1 header uppercase" size="h1" upper="true"></app-header>
 
-  headerSyntax = `<app-header [headerText]="header" [upper]="true"></app-header>`;
+  // h2 header as entered case with property binding
+  <app-header [text]="h2Header" [size]="sizeH2"></app-header>`;
 
-  actions = 'Actions';
-  addAction = 'Add';
   addActionResult: string;
-  removeAction = 'Remove';
   removeActionResult: string;
+  resetActionResult: string;
+  actionSyntax = `<app-action text="Add" (selected)="actionClicked($event)"></app-action>`;
 
-  listItems = 'List Items';
-
-  actionSyntax = `<app-action [actionText]="action" (selected)="actionClicked($event)"></app-action>`;
-
+  listItemSyntax = `<app-list-item></app-list-item>`;
 
   addClicked(event) {
-    this.addActionResult = this.addAction + ' clicked';
+    // figure out why event is undefined
+    // I thought it would pass in the $event which should be click
+    this.addActionResult = 'Add clicked';
   }
 
   removeClicked(event) {
-    this.removeActionResult = this.removeAction + ' clicked';
+    this.removeActionResult = 'Remove clicked';
+  }
+
+  resetClicked(event) {
+    this.addActionResult = '';
+    this.removeActionResult = '';
   }
 
   ngAfterViewInit() {

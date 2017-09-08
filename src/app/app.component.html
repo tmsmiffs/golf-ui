@@ -11,24 +11,30 @@
   <div class="row flex-xl-nowrap">
     <main class="col-12">
       <h1>
-        {{title}}
+        {{ title }}
       </h1>
       <div class="content">
-        <app-header [headerText]="headers"></app-header>
+        <app-header text="Headers" size="h2"></app-header>
         <p>
-          Headers are h2 elements. Use the headerText property to set the text. The optonal upper property sets the case. The default is false.
+          Headers are &lt;h1&gt; to &lt;h6&gt; html headings. The default is &lt;h1&gt;, but use the size property to set other
+          heading sizes.  Use the text property to set the text. The optional upper property sets the text to uppercase.
+          The default, false, displays the text as entered.
         </p>
-        <app-header [headerText]="header1" [upper]="true"></app-header>
-        <app-header [headerText]="header2"></app-header>
+        <app-header text="h1 Header Uppercase" size="h1" [upper]="true"></app-header>
+        <app-header text="h2 Header" size="h2"></app-header>
+        <app-header text="h3 Header" size="h3"></app-header>
+        <app-header text="h4 Header" size="h4"></app-header>
+        <app-header text="h5 Header" size="h5"></app-header>
+        <app-header text="h6 Header" size="h6"></app-header>
         <pre>
-          <code class="language-typescript">
+          <code class="language-javascript">
             {{ headerSyntax }}
           </code>
         </pre>
       </div>
 
       <div class="content">
-        <app-header [headerText]="actions"></app-header>
+        <app-header text="Actions" size="h2"></app-header>
         <p>
           Actions are links that act as buttons. Set the text with the actionText property. Use the selected property to bind an event
           handler.
@@ -36,19 +42,25 @@
 
         <div class="row no-gutters">
           <div class="col-lg-2 col-md-4">
-            <app-action [actionText]="addAction" (selected)="addClicked($event)"></app-action>
+            <app-action text="Add" (selected)="addClicked($event)"></app-action>
           </div>
           <div class="col">
-            {{addActionResult}}
+            {{ addActionResult }}
           </div>
         </div>
 
         <div class="row no-gutters">
           <div class="col-lg-2 col-md-4">
-            <app-action [actionText]="removeAction" (selected)="removeClicked($event)"></app-action>
+            <app-action text="Remove" (selected)="removeClicked($event)"></app-action>
           </div>
           <div class="col">
-            {{removeActionResult}}
+            {{ removeActionResult }}
+          </div>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-lg-2 col-md-4">
+            <app-action text="Reset" (selected)="resetClicked($event)"></app-action>
           </div>
         </div>
 
@@ -60,8 +72,14 @@
       </div>
 
       <div class="content">
-        <app-header [headerText]="listItems"></app-header>
+        <app-header text="List Items" size="h2"></app-header>
         <app-list-item></app-list-item>
+
+        <pre>
+          <code class="language-typescript">
+            {{ listItemSyntax }}
+          </code>
+        </pre>
       </div>
 
 
