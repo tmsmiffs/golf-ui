@@ -1,9 +1,9 @@
   <div class="row list-item" (mouseover)="showButton()" (mouseleave)="hideButton()">
     <div class="item" [class.col-6]="!twoColumns" [class.col-4]="twoColumns">
-      {{ columnOne }}
+      {{ itemData.columnOne }}
     </div>
     <div *ngIf="twoColumns" [class.col-6]="!twoColumns" [class.col-4]="twoColumns">
-      {{ columnTwo }}
+      {{ itemData.columnTwo }}
     </div>
     <div class="action" [class.col-6]="!twoColumns" [class.col-4]="twoColumns" *ngIf="show">
       <app-action [text]="buttonText" (selected)="removeItem($event)"></app-action>

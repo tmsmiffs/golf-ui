@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { ItemData } from './item-data';
 import 'prismjs/prism';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';
@@ -26,14 +27,19 @@ export class AppComponent implements AfterViewInit {
 
   listItemSyntax = `
   // The default button text is Remove.
-  <app-list-item columnOne="This is a list item." (itemRemoved)="listItemRemoved()"></app-list-item>
+  <app-list-item [itemData]="data" (itemRemoved)="listItemRemoved()"></app-list-item>
 
   // This list item button text is Delete.
-  <app-list-item columnOne="This is another list item." buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>
+  <app-list-item [itemData]="data" buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>
 
-  // Use the columnTwo property to add a second column.
-  <app-list-item columnOne="This is the first column." columnTwo="And this is the second column."
-    buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>`;
+  // The ItemData class has two properties: columnOne and columnTwo.  Use the optional ItemData.columnTwo
+  // property to add a second column.`;
+
+  itemData1 = new ItemData(`This is a one column list item with a lot of text. Wrapping occurrs when there is too much
+    text for one line.  Also notice that as the text wraps the row height increases.  Finally on mouse over a Remove button appears.`);
+
+  itemData2 = new ItemData(`This is another list item with a bunch of text to prove thtat wrapping works as expected.`,
+    `It has two columns and if enough text is entered then wrapping occurrs in this column too.`);
 
   addClicked(event) {
     // figure out why event is undefined

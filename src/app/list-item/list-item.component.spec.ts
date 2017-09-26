@@ -4,12 +4,14 @@ import { DebugElement, Component } from '@angular/core';
 
 import { ListItemComponent } from './list-item.component';
 import { ActionComponent } from './../action/action.component';
+import { ItemData } from '../item-data';
 
 
 @Component({
-  template: `<app-list-item columnOne="This is a list item" buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>`
+  template: `<app-list-item [itemData]="itemData" buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>`
 })
 class TestHostComponent {
+  itemData: ItemData = new ItemData('This is a list item.');
   result: string;
   listItemRemoved() {
     this.result = 'Item Removed';
@@ -78,11 +80,15 @@ describe('ListItemComponent', () => {
 });
 
 
+// Currently I am using two TestHostComponents because I don't yet know how to modify
+// properties of the test host for different tests.  I'm sure it can be done.
+
+
 @Component({
-  template: `<app-list-item columnOne="This is a list item" columnTwo="It has two columns"
-    (itemRemoved)="listItemRemoved()"></app-list-item>`
+  template: `<app-list-item [itemData]="itemData" (itemRemoved)="listItemRemoved()"></app-list-item>`
 })
 class TestHost2Component {
+  itemData: ItemData = new ItemData('This is a list item.', 'It has two columns');
   result: string;
   listItemRemoved() {
     this.result = 'Item Removed';

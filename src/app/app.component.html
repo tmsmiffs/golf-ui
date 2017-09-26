@@ -73,12 +73,8 @@
 
       <div class="content">
         <app-header text="List Items" size="h2"></app-header>
-        <app-list-item columnOne="This is a one column list item with a lot of text. Wrapping occurrs when there is too much text
-          for one line.  Also notice that as the text wraps the row height increases.  Finally on mouse over a Remove button appears."
-          (itemRemoved)="listItemRemoved()"></app-list-item>
-        <app-list-item columnOne="This is another list item with a bunch of text to prove thtat wrapping works as expected."
-          columnTwo="It has two columns and if enough text is entered then wrapping occurrs in this column too."
-          buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>
+        <app-list-item [itemData]="itemData1" (itemRemoved)="listItemRemoved()"></app-list-item>
+        <app-list-item [itemData]="itemData2" buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>
 
         <pre>
           <code class="language-typescript">

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ItemData } from '../item-data'
 
 @Component({
   selector: 'app-list-item',
@@ -7,8 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ListItemComponent implements OnInit {
 
-  @Input() columnOne: string;
-  @Input() columnTwo: string;
+  @Input() itemData: ItemData;
   @Input() buttonText = 'Remove';
   @Output() itemRemoved = new EventEmitter();
 
@@ -16,7 +16,7 @@ export class ListItemComponent implements OnInit {
   twoColumns = false;
 
   ngOnInit() {
-    this.twoColumns = !!this.columnTwo;
+    this.twoColumns = !!this.itemData.columnTwo;
   }
 
   showButton() {
