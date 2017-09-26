@@ -1,8 +1,11 @@
   <div class="row list-item" (mouseover)="showButton()" (mouseleave)="hideButton()">
-    <div class="col-6 item">
-      {{ text }}
+    <div class="item" [class.col-6]="!twoColumns" [class.col-4]="twoColumns">
+      {{ columnOne }}
     </div>
-    <div class="col-6 action" *ngIf="show">
+    <div *ngIf="twoColumns" [class.col-6]="!twoColumns" [class.col-4]="twoColumns">
+      {{ columnTwo }}
+    </div>
+    <div class="action" [class.col-6]="!twoColumns" [class.col-4]="twoColumns" *ngIf="show">
       <app-action [text]="buttonText" (selected)="removeItem($event)"></app-action>
     </div>
   </div>

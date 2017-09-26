@@ -25,11 +25,15 @@ export class AppComponent implements AfterViewInit {
   <app-action text="Add" (selected)="actionClicked($event)"></app-action>`;
 
   listItemSyntax = `
-  // The default button text is Remove
-  <app-list-item text="This is a list item." (itemRemoved)="listItemRemoved()"></app-list-item>
+  // The default button text is Remove.
+  <app-list-item columnOne="This is a list item." (itemRemoved)="listItemRemoved()"></app-list-item>
 
-  // This list item button text is Delete
-  <app-list-item text="This is another list item." buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>`;
+  // This list item button text is Delete.
+  <app-list-item columnOne="This is another list item." buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>
+
+  // Use the columnTwo property to add a second column.
+  <app-list-item columnOne="This is the first column." columnTwo="And this is the second column."
+    buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>`;
 
   addClicked(event) {
     // figure out why event is undefined
