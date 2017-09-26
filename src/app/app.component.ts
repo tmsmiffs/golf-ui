@@ -21,9 +21,15 @@ export class AppComponent implements AfterViewInit {
   addActionResult: string;
   removeActionResult: string;
   resetActionResult: string;
-  actionSyntax = `<app-action text="Add" (selected)="actionClicked($event)"></app-action>`;
+  actionSyntax = `
+  <app-action text="Add" (selected)="actionClicked($event)"></app-action>`;
 
-  listItemSyntax = `<app-list-item></app-list-item>`;
+  listItemSyntax = `
+  // The default button text is Remove
+  <app-list-item text="This is a list item." (itemRemoved)="listItemRemoved()"></app-list-item>
+
+  // This list item button text is Delete
+  <app-list-item text="This is another list item." buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>`;
 
   addClicked(event) {
     // figure out why event is undefined
@@ -38,6 +44,10 @@ export class AppComponent implements AfterViewInit {
   resetClicked(event) {
     this.addActionResult = '';
     this.removeActionResult = '';
+  }
+
+  listItemRemoved() {
+    console.log('item removed');
   }
 
   ngAfterViewInit() {

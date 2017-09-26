@@ -73,7 +73,9 @@
 
       <div class="content">
         <app-header text="List Items" size="h2"></app-header>
-        <app-list-item></app-list-item>
+        <app-list-item text="This is a list item with a lot of text. It shows that text wrapping occurrs.  It also shows
+          that as the text wraps the row height increases." (itemRemoved)="listItemRemoved()"></app-list-item>
+        <app-list-item text="This is another list item." buttonText="Delete" (itemRemoved)="listItemRemoved()"></app-list-item>
 
         <pre>
           <code class="language-typescript">
